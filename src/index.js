@@ -19,14 +19,16 @@ const port = process.env.PORT || 3000;
      }
   });
 
-app.post('/swip/left', (req, res) => {
-  ks.sendKey("37")
+app.put('/swip/left', (req, res) => {
+  ks.sendKey("@37")
   res.statusCode = 200
+  res.send("{}")
 });
 
-app.post("/swip/right", (req, res) => {
-    ks.sendKey("39")
+app.put("/swip/right", (req, res) => {
+    ks.sendKey("@39")
     res.statusCode = 200
+    res.send("{}")
 });
 
 app.get('/', function(req, res) {
