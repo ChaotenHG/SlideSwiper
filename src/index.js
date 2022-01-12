@@ -8,11 +8,19 @@ const port = process.env.PORT || 3000;
 
   getLocalIp( function ( err, ip ) {
     
-    if(ip != null){
+    if(process.env.IP || ip != null){
 
-      console.log("LocalIP: " + ip );
+      let ipString
 
-      QRCode.toString("http://" + ip + ":" + port,{type:'terminal'}, function (err, url) {
+      if(process.env.IP != null){
+        ipString = process.env.IP
+      }else {
+        ipString = ip
+      }
+
+      console.log("LocalIP: " +  ipString );
+
+      QRCode.toString("http://" + ipString + ":" + port,{type:'terminal'}, function (err, url) {
         console.log(url)
       })
 
