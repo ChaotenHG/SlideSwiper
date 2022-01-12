@@ -1,8 +1,8 @@
-const ks = require('node-key-sender')
 const app = require('express')();
 const QRCode = require('qrcode')
 const getLocalIp = require( "node-localip" );
 const path = require('path');
+const ks = require('node-key-sender')
 
 const port = process.env.PORT || 3000;
 
@@ -19,13 +19,13 @@ const port = process.env.PORT || 3000;
      }
   });
 
-app.put('/swip/left', (req, res) => {
+app.post('/swip/left', (req, res) => {
   ks.sendKey("@37")
   res.statusCode = 200
   res.send("{}")
 });
 
-app.put("/swip/right", (req, res) => {
+app.post("/swip/right", (req, res) => {
     ks.sendKey("@39")
     res.statusCode = 200
     res.send("{}")
