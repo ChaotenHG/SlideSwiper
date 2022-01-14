@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const app = require('express')();
 const QRCode = require('qrcode')
 const getLocalIp = require( "node-localip" );
