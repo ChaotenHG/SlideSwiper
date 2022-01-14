@@ -10,7 +10,7 @@ to set the server port define a Environment Variables named `PORT`
 
 # Installation
 
-1. install [node](https://nodejs.org/) [java](https://java.com/en/download/) for your operating system
+1. install [node](https://nodejs.org/) and [java](https://java.com/en/download/) for your operating system
 2. clone the repo using `git clone https://github.com/ChaotenHG/SlideSwiper/`
 3. navigated in to the directory with `cd SlideSwiper`
 4. run `npm install` or `yarn install` to install the dependency
