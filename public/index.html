@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Control</title>
+</head>
+<body>
+    <button id=left class="left">
+        Left
+    </button>
+    <button id="right" class="right">
+        Right
+    </button>
+
+    <script>
+
+        // Get the button
+        var left = document.getElementById("left");
+        var right = document.getElementById("right");
+
+        // Add event listener to the button
+        left.addEventListener("click", function() {
+            // request to server using fetch
+            fetch('/swip/left', {
+                method: 'POST',
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+        });
+
+        right.addEventListener("click", function() {
+            // request to server using fetch
+            fetch('/swip/right', {
+                method: 'POST',
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+        });
+    </script>
+
+    <style>
+
+        html, body {
+            margin:0px;
+            height:100%;
+        }
+
+        button{
+            width: 50%;
+            height:100%;
+            float: left;
+            margin: 0;
+            outline: none;
+            color: white;
+        }
+
+        .left{
+            background-color: #f44336;
+        }
+
+        .right{
+            background-color: #4CAF50;
+        }
+
+    </style>
+</body>
+</html>
